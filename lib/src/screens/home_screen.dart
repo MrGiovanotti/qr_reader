@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:qr_reader/src/blocs/scan_bloc.dart';
 import 'package:qr_reader/src/models/scan.dart';
+import 'package:qr_reader/src/utils/functions_utils.dart';
 
 class HomeScreen extends StatelessWidget {
   final ScanBloc scanBloc = ScanBloc();
@@ -75,6 +76,7 @@ class HomeScreen extends StatelessWidget {
                         color: Theme.of(context).primaryColor,
                       )
                     : null,
+                onTap: () => FunctionUtils.navigateToUrl(scans[index]),
               ),
               background: Container(
                 decoration: BoxDecoration(
