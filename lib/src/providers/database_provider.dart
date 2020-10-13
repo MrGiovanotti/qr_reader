@@ -30,7 +30,6 @@ class DatabaseProvider {
   createDatabase() async {
     Directory databaseDirectory = await getApplicationDocumentsDirectory();
     final String databasePath = join(databaseDirectory.path, "qr_reader.db");
-    await deleteDatabase(databasePath);
     _database = await openDatabase(databasePath, version: 1,
         onCreate: (db, version) async {
       await db.execute("CREATE TABLE $_TABLE_NAME ("
