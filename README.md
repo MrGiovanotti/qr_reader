@@ -1,6 +1,13 @@
 # qr_reader
 
-A new Flutter project.
+A new Flutter project. This app scan qr codes and store them in sqlite database. If the scan is a valid url, you can navigate tapping it.
+
+# Dependencies:
+
+- barcode_scan
+- sqflite
+- path_provider
+- url_launcher
 
 ## Getting Started
 
