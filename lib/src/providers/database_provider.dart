@@ -5,9 +5,16 @@ import 'package:qr_reader/src/models/scan.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseProvider {
+  static DatabaseProvider _databaseProvider;
   static Database _database;
-  static final DatabaseProvider databaseProvider = DatabaseProvider._();
   static const String _TABLE_NAME = 'scans';
+
+  static DatabaseProvider getInstance() {
+    if (_databaseProvider == null) {
+      _databaseProvider = DatabaseProvider._();
+    }
+    return _databaseProvider;
+  }
 
   // Private constructor for singleton
   DatabaseProvider._();
